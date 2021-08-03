@@ -7,4 +7,4 @@ tasks:
       AWS_SECRET_ACCESS_KEY: L8i/33kmB5DcMZLeSglEuw1ufCSed+f3f6Ll9SAu
     command: |
       npm i -g serverless \
-      serverless login
+      && serverless login
