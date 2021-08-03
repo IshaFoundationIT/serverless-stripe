@@ -1,0 +1,32 @@
+org: kirthiss
+app: pystripe
+service: aws-python-rest-api
+
+frameworkVersion: '2'
+
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux  
+provider:
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: us-east-1
+  lambdaHashingVersion: '20201221'
+
+package:
+  include:
+    - config/**
+    - node_modules/**
+  exclude:
+    - package.json
+    
+functions:
+  totalgiving:
+    handler: handler.totalgiving
+    events:
+      - https:
+          path: /
+          method: post

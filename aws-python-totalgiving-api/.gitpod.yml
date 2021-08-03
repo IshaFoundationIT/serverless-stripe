@@ -1,0 +1,10 @@
+image: gitpod/workspace-full:latest
+
+tasks:
+  - name: startup tasks
+    env:
+      AWS_ACCESS_KEY_ID: AKIAT2QK4NKO2QFOMQCP
+      AWS_SECRET_ACCESS_KEY: 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
+    command: |
+      npm i -g serverless \
+      serverless login
