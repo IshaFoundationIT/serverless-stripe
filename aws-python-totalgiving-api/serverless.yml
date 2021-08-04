@@ -1,21 +1,40 @@
 org: kirthiss
 app: pystripe
-service: aws-python-rest-api
-
-frameworkVersion: '2'
+service: sulaba-api
+frameworkVersion: ">=1.54.0 <3.0.0"
 
 plugins:
   - serverless-python-requirements
 custom:
   pythonRequirements:
     dockerizePip: non-linux  
+  sulaba-region: uk-sulaba
+
 provider:
   name: aws
   runtime: python3.8
   stage: dev
   region: us-east-1
   lambdaHashingVersion: '20201221'
-
+  endpointType: EDGE
+  logs:                # Enable CloudWatch logs
+    restApi: true
+  tracing:             # Enable X-Ray tracing
+    apiGateway: true
+  
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "secretsmanager:GetSecretValue"
+      Resource: "${cf:sulaba-api-deps-${self:provider.stage}.SulabaServerSecretArn}"
+    - Effect: "Allow"
+      Action:
+        - "sns:Publish"
+      Resource: ${cf:sulaba-api-deps-${self:provider.stage}.SNSTargetForFailedEvents}
+    - Effect: "Allow"
+      Action:
+        - "events:PutEvents"
+      Resource: "*"    
 package:
   include:
     - config/**
@@ -28,5 +47,10 @@ functions:
     handler: handler.totalgiving
     events:
       - https:
-          path: /
+          path: /totalgiving
           method: post
+          async: false
+    environment:
+      FAILURE_SNS: ${cf:${self:custom.sulaba-region}-api-${self:provider.stage}.SNSTargetForFailedEvents}
+      EVENT_BRIDGE: "default"
+      ENDPOINT_SECRET: "${cf:${self:custom.sulaba-region}-api-deps-${self:provider.stage}.SulabaServerSecretArn}"

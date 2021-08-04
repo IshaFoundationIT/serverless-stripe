@@ -1,2 +1,2 @@
 stripe
-xmlrpc
+odoorpc

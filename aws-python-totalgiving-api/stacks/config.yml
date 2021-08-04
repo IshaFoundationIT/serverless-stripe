@@ -1,0 +1,6 @@
+---
+odoo-server-secret: ${self:provider.stage}/stripe/stripe-webhook-endpoint-secret
+odoo-url: uk.sulaba.isha.us
+odoo-user: admin
+odoo-pwd: admin
+odoo-port: 443

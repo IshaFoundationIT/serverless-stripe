@@ -1,0 +1,33 @@
+
+service: sulaba-api-deps
+frameworkVersion: ">=1.54.0 <3.0.0"
+custom:
+  sulaba-region: uk-sulaba
+provider:
+  name: aws
+  stage: dev
+  region: us-east-1
+
+resources:
+  Resources:
+
+    NotifyWebhookEventFailedToValidate:
+      Type: AWS::SNS::Topic
+      Properties:
+        DisplayName: ${self.custom.sulaba-region}-event-failed-to-validate
+        TopicName: ${self.custom.sulaba-region}-event-failed-to-validate
+
+    SulabaServerSecret:
+      Type: AWS::SecretsManager::Secret
+      Properties:
+        Description: This is the data related to sulaba server access
+        Name: ${file(./config.yml):odoo-server}
+
+  Outputs:
+    SNSTargetForFailedEvents:
+      Value:
+        Ref: NotifyWebhookEventFailedToValidate
+    SulabaServerSecretArn:
+      Value:
+        Ref: SulabaServerSecret
+    
