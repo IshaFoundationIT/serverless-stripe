@@ -7,6 +7,6 @@ tasks:
       AWS_SECRET_ACCESS_KEY: L8i/33kmB5DcMZLeSglEuw1ufCSed+f3f6Ll9SAu
     init: |
       npm i -g serverless
-      npm install --save serverless-python-requirements
-    command: |
+    
+      npm install
       serverless login

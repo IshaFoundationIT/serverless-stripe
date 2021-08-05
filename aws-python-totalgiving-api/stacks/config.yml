@@ -1,5 +1,5 @@
 ---
-odoo-server-secret: ${self:provider.stage}/stripe/stripe-webhook-endpoint-secret
+odoo-server-secret: ${self:provider.stage}/odoo/server-secret
 odoo-url: uk.sulaba.isha.us
 odoo-user: admin
 odoo-pwd: admin

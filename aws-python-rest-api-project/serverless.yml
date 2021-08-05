@@ -1,0 +1,25 @@
+org: kirthiss
+app: testpyapi
+service: aws-python-rest-api-project
+
+frameworkVersion: '2'
+
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux  
+  sulaba-region: uk-sulaba
+
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: '20201221'
+
+functions:
+  hello:
+    handler: handler.totalgiving
+    events:
+      - http:
+          path: /
+          method: post

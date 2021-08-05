@@ -1,5 +1,5 @@
 org: kirthiss
-app: pystripe
+app: py-eventbridge
 service: sulaba-api
 frameworkVersion: ">=1.54.0 <3.0.0"
 
@@ -51,6 +51,6 @@ functions:
           method: post
           async: false
     environment:
-      FAILURE_SNS: ${cf:${self:custom.sulaba-region}-api-${self:provider.stage}.SNSTargetForFailedEvents}
+      FAILURE_SNS: ${cf:sulaba-api-deps-${self:provider.stage}.SNSTargetForFailedEvents}
       EVENT_BRIDGE: "default"
-      ENDPOINT_SECRET: "${cf:${self:custom.sulaba-region}-api-deps-${self:provider.stage}.SulabaServerSecretArn}"
+      ENDPOINT_SECRET: "${cf:sulaba-api-deps-${self:provider.stage}.SulabaServerSecretArn}"
