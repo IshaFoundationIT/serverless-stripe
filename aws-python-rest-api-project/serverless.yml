@@ -2,7 +2,7 @@ org: kirthiss
 app: testpyapi
 service: aws-python-rest-api-project
 
-frameworkVersion: '2'
+frameworkVersion: ">=1.54.0 <3.0.0"
 
 plugins:
   - serverless-python-requirements
@@ -10,7 +10,11 @@ custom:
   pythonRequirements:
     dockerizePip: non-linux  
   sulaba-region: uk-sulaba
-
+package:
+  include:
+    - node_modules/**
+  exclude:
+    - package.json
 provider:
   name: aws
   runtime: python3.8
