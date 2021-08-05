@@ -4,26 +4,18 @@ service: aws-python-rest-api-project
 
 frameworkVersion: ">=1.54.0 <3.0.0"
 
-plugins:
-  - serverless-python-requirements
-custom:
-  pythonRequirements:
-    dockerizePip: non-linux  
-  sulaba-region: uk-sulaba
-package:
-  include:
-    - node_modules/**
-  exclude:
-    - package.json
 provider:
   name: aws
   runtime: python3.8
   lambdaHashingVersion: '20201221'
 
 functions:
-  hello:
+  totalgiving:
     handler: handler.totalgiving
     events:
       - http:
           path: /
           method: post
+
+plugins:
+  - serverless-python-requirements

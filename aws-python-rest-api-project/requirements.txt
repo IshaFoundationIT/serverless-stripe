@@ -1,2 +1,2 @@
-stripe
-odoorpc
+OdooRPC==0.7.0
+stripe==2.60.0

@@ -5,8 +5,10 @@ tasks:
     env:
       AWS_ACCESS_KEY_ID: AKIAT2QK4NKO2QFOMQCP
       AWS_SECRET_ACCESS_KEY: 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
-    init: |
+    command: |
+      export PIP_USER=false
       npm i -g serverless
+      sls plugin install -n serverless-python-requirements
       npm install --save serverless-python-requirements
       npm install
       serverless login
