@@ -9,6 +9,5 @@ tasks:
       export PIP_USER=false
       npm i -g serverless
       sls plugin install -n serverless-python-requirements
-      npm install --save serverless-python-requirements
-      npm install
+      sls plugin install -n serverless-lift
       serverless login

@@ -5,6 +5,7 @@ frameworkVersion: ">=1.54.0 <3.0.0"
 
 plugins:
   - serverless-python-requirements
+  - serverless-lift
 custom:
   pythonRequirements:
     dockerizePip: non-linux  
@@ -41,16 +42,32 @@ package:
     - node_modules/**
   exclude:
     - package.json
-    
+constructs:
+  jobs:
+    type: queue
+    worker:
+      handler: handler.consumer    
 functions:
   totalgiving:
     handler: handler.totalgiving
     events:
-      - https:
+      - http:
           path: /totalgiving
           method: post
           async: false
     environment:
       FAILURE_SNS: ${cf:sulaba-api-deps-${self:provider.stage}.SNSTargetForFailedEvents}
-      EVENT_BRIDGE: "default"
-      ENDPOINT_SECRET: "${cf:sulaba-api-deps-${self:provider.stage}.SulabaServerSecretArn}"
+      EVENT_BRIDGE: ${cf:sulaba-api-deps-${self:provider.stage}.EventBusArn}
+      ENDPOINT_SECRET: ${cf:sulaba-api-deps-${self:provider.stage}.SulabaServerSecretArn}
+  producer:
+    handler: handler.producer
+    environment:
+      QUEUE_URL: ${construct:jobs.queueUrl}
+    events:
+      - eventBridge:
+          eventBus: ${cf:sulaba-api-deps-${self:provider.stage}.EventBusArn}
+          pattern:
+            source:
+              - totalgiving
+            detail-type:
+              - donation

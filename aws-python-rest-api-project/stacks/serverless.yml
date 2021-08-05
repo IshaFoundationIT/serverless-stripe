@@ -13,11 +13,6 @@ provider:
 resources:
   Resources:
 
-    EventBus:
-      Type: AWS::Events::EventBus
-      Properties:
-        Name: ${self:custom.sulaba-region}-${self:provider.stage}-bus
-        
     NotifyWebhookEventFailedToValidate:
       Type: AWS::SNS::Topic
       Properties:
@@ -37,7 +32,4 @@ resources:
     SulabaServerSecretArn:
       Value:
         Ref: SulabaServerSecret
-    EventBusArn:
-      Value:
-        Ref: EventBus
     

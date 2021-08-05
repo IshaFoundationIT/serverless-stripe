@@ -9,13 +9,33 @@ provider:
   runtime: python3.8
   lambdaHashingVersion: '20201221'
 
+constructs:
+  jobs:
+    type: queue
+    worker:
+      handler: handler.consumer
+
 functions:
+  producer:
+    handler: handler.producer
+    events:
+      - http:
+          method: post
+          path: produce
+    environment:
+      QUEUE_URL: ${construct:jobs.queueUrl}
+
   totalgiving:
     handler: handler.totalgiving
     events:
       - http:
           path: /
           method: post
+    environment:
+      FAILURE_SNS: ${cf:sulaba-api-deps-${self:provider.stage}.SNSTargetForFailedEvents}
+      EVENT_BRIDGE: "default-1"
+      ENDPOINT_SECRET: "${cf:sulaba-api-deps-${self:provider.stage}.SulabaServerSecretArn}"
 
 plugins:
   - serverless-python-requirements
+  - serverless-lift
