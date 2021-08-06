@@ -3,7 +3,14 @@ import json
 import boto3
 import os
 import logging
-
+###############################
+#TO Dos
+# 1. Add Alarms/notification if a message goes to dlq
+# 2. check consumer if it raises exception on error
+# 3. Add target to event rule
+# 4. cleanup totalgiving
+# 5. Create setup for other apis
+#################################
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
@@ -38,35 +45,35 @@ def producer(event, context):
 
 def consumer(event, context):
     for record in event['Records']:
-        logger.info("*************************")
-        logger.info(record)
+        # record = json.loads(record['body'])
+        logger.info("************************* - {0}".format(type(record)))
+        logger.info("************************* - {0}".format(json.loads(record['body'])))
+        logger.info("========================= - {0}".format(type(json.loads(record['body']))))
+        # logger.info("************************* - {0}".format(type(record['body']['detail'])))
+        logger.info(f'Message: {record}')
         logger.info("*************************")
         logger.info(f'Message body: {record["body"]}')
-        # logger.info(
-            # f'Message attribute: {record["messageAttributes"]["AttributeName"]["stringValue"]}'
-        # )
-        totalgiving(event, context)
+        response = totalgiving_process_q(json.loads(record['body'])['detail'], context)
+        # if response['statusCode'] != 200:
 
-def totalgiving(event, context):
-    logger.info(type(event['body']))
-    logger.info(type(json.dumps(event['body'])))
-    logger.info("*****env bus name is {0}".format(event_bridge))
+
+
+def totalgiving_router(event, context):
     bus = boto3.client('events')
-    detail = str(event['body'])
-    logger.info(detail)
+    logger.info(type(event['body']))
     response = bus.put_events(
             Entries=[
                 {
                     'Source': 'totalgiving',
                     'DetailType': 'donation',
-                    'Detail': detail,
+                    'Detail': event['body'],
                     'EventBusName': event_bridge
                 }
             ]
         )
 
-def s2q(event, context):
-    print(event)
+def totalgiving_process_q(event, context):
+    logger.info(event)
 
     username = "admin"
     password = "admin"
@@ -76,18 +83,18 @@ def s2q(event, context):
     db = "ishafoundationit-odoo14-master-2820710"
 
     odoo = odoorpc.ODOO(url,protocol='jsonrpc+ssl',port='443')
-    print("++++++++++++++++++++++++++++++++++++++++++++++++")
-    print("initialzied")
+    logger.info("++++++++++++++++++++++++++++++++++++++++++++++++")
+    logger.info("initialzied")
     odoo.login(db, username, password)
-    print("logged in")
-    user = odoo.env.user
-    print(user)
+    logger.info("logged in")
+    logger.info(event)
+    logger.info(type(event))
 
     try:
-        id = odoo.env['donation.donation'].create(eval(event))
-        print("id created is {0}".format(id))
+        id = odoo.env['donation.donation'].create(event)
+        logger.info("id created is {0}".format(id))
         response = {"statusCode": 200, "id": id}
     except Exception as e:
         response = {"statusCode": 501, "error": str(e)}
-    print("response is {0}".format(response))
+    logger.info("response is {0}".format(response))
     return response

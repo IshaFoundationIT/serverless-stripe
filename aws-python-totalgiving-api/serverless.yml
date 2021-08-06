@@ -42,14 +42,10 @@ package:
     - node_modules/**
   exclude:
     - package.json
-constructs:
-  jobs:
-    type: queue
-    worker:
-      handler: handler.consumer    
+ 
 functions:
   totalgiving:
-    handler: handler.totalgiving
+    handler: handler.totalgiving_router
     events:
       - http:
           path: /totalgiving
@@ -59,15 +55,22 @@ functions:
       FAILURE_SNS: ${cf:sulaba-api-deps-${self:provider.stage}.SNSTargetForFailedEvents}
       EVENT_BRIDGE: ${cf:sulaba-api-deps-${self:provider.stage}.EventBusArn}
       ENDPOINT_SECRET: ${cf:sulaba-api-deps-${self:provider.stage}.SulabaServerSecretArn}
-  producer:
-    handler: handler.producer
-    environment:
-      QUEUE_URL: ${construct:jobs.queueUrl}
-    events:
-      - eventBridge:
-          eventBus: ${cf:sulaba-api-deps-${self:provider.stage}.EventBusArn}
-          pattern:
-            source:
-              - totalgiving
-            detail-type:
-              - donation
+
+constructs:
+  my-queue:
+    type: queue
+    worker:
+      handler: handler.consumer
+
+  # producer:
+  #   handler: handler.producer
+  #   environment:
+  #     QUEUE_URL: ${construct:jobs.queueUrl}
+  #   events:
+  #     - eventBridge:
+  #         eventBus: ${cf:sulaba-api-deps-${self:provider.stage}.EventBusArn}
+  #         pattern:
+  #           source:
+  #             - totalgiving
+  #           detail-type:
+  #             - donation

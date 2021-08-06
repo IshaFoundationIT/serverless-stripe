@@ -18,6 +18,31 @@ resources:
       Properties:
         Name: ${self:custom.sulaba-region}-${self:provider.stage}-bus
         
+    SulabaQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: ${self:custom.sulaba-region}-${self:provider.stage}-queue
+
+    TotalGivingEventRule:
+      Type: AWS::Events::Rule
+      Properties:
+        Name: TotalGiving
+        Description: Sends totalgiving eventhooks to queue
+        EventBusName: ${self:custom.sulaba-region}-${self:provider.stage}-bus
+        EventPattern:
+          source:
+            - totalgiving
+          detail:
+            object:
+              - donation
+            event:
+              - created
+              - updated
+        State: ENABLED
+        # Targets:
+          # - Arn: ${self:custom.sulaba-region}-${self:provider.stage}-queue
+            # Id: TargetFunctionV1  
+
     NotifyWebhookEventFailedToValidate:
       Type: AWS::SNS::Topic
       Properties:
@@ -40,4 +65,11 @@ resources:
     EventBusArn:
       Value:
         Ref: EventBus
+    SulabaQueueArn:
+      Value:
+        Ref: SulabaQueue
+    TotalGivingEventRuleArn:
+      Value:
+        Ref: TotalGivingEventRule
+
     
