@@ -61,7 +61,8 @@ constructs:
     type: queue
     worker:
       handler: handler.consumer
-
+    environment:
+      QUEUE_URL: ${construct:my-queue.queueUrl}
   # producer:
   #   handler: handler.producer
   #   environment:
