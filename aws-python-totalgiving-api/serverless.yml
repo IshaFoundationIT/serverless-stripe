@@ -36,6 +36,11 @@ provider:
       Action:
         - "events:PutEvents"
       Resource: "*"    
+    - Effect: "Allow"
+      Action:
+        - "sqs:SendMessage"
+      Resource: "*"    
+
 package:
   include:
     - config/**
@@ -55,15 +60,18 @@ functions:
       FAILURE_SNS: ${cf:sulaba-api-deps-${self:provider.stage}.SNSTargetForFailedEvents}
       EVENT_BRIDGE: ${cf:sulaba-api-deps-${self:provider.stage}.EventBusArn}
       ENDPOINT_SECRET: ${cf:sulaba-api-deps-${self:provider.stage}.SulabaServerSecretArn}
+      QUEUE_URL: ${construct:my-queue.queueUrl}
 
 constructs:
   my-queue:
     type: queue
     worker:
       handler: handler.consumer
-    environment:
-      QUEUE_URL: ${construct:my-queue.queueUrl}
-  # producer:
+      environment:
+        QUEUE_URL: ${construct:my-queue.queueUrl}
+        EVENT_BRIDGE: 'testing...'
+
+        # producer:
   #   handler: handler.producer
   #   environment:
   #     QUEUE_URL: ${construct:jobs.queueUrl}

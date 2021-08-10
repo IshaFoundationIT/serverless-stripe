@@ -15,7 +15,6 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 QUEUE_URL = os.getenv('QUEUE_URL')
-QUEUE_DLQ_URL = os.getenv('QUEUE_DLQ_URL')
 event_bridge = os.getenv('EVENT_BRIDGE')
 SQS = boto3.client('sqs')
 
@@ -44,11 +43,17 @@ def producer(event, context):
     return {'statusCode': status_code, 'body': json.dumps({'message': message})}
 
 
+def consumer_dlq(event, context):
+    pass
+
 def consumer(event, context):
+
     for record in event['Records']:
         # record = json.loads(record['body'])
-        logger.info("////////////DLQ url is {0}".format(QUEUE_DLQ_URL))
+        logger.info("////////////DLQ url is {0}".format(event_bridge))
         logger.info("////////////QUE url is {0}".format(QUEUE_URL))
+        QUEUE_DLQ_URL = QUEUE_URL.replace('my-queue','my-queue-dlq')
+        logger.info("////////////QUE url is {0}".format(QUEUE_DLQ_URL))
         logger.info("************************* - {0}".format(type(record)))
         logger.info("************************* - {0}".format(json.loads(record['body'])))
         logger.info("========================= - {0}".format(type(json.loads(record['body']))))
@@ -61,19 +66,17 @@ def consumer(event, context):
             try:
                 SQS.send_message(
                     QueueUrl=QUEUE_DLQ_URL,
-                    MessageBody=record,
+                    MessageBody=json.dumps(record),
             )
-                logger.info('Message pushed to DLQ!')
+                logger.info('.........Message pushed to DLQ!')
             except Exception as e:
                 logger.exception('Sending message to SQS DLQ queue failed!')
                 message = str(e)
-                status_code = 500
+                status_code = 599
                 return response
 
-
-
-
 def totalgiving_router(event, context):
+    
     bus = boto3.client('events')
     logger.info(type(event['body']))
     logger.info(event['body'])
