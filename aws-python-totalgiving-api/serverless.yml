@@ -65,6 +65,7 @@ functions:
 constructs:
   my-queue:
     type: queue
+    alarm: kirthi.siva@ishafoundation.org
     worker:
       handler: handler.consumer
       environment:
