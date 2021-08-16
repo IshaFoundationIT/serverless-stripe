@@ -7,6 +7,7 @@ import datetime
 import pytz
 from datetime import timezone, datetime
 from dateutil import parser
+import stripe
 ###############################
 #TO Dos
 # 1. Add Alarms/notification if a message goes to dlq
@@ -74,7 +75,7 @@ def consumer_stripe(event, context):
 
 def stripe_process_q(event, context):
     # logger.info(event)
-
+    stripe.api_key = "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"
     username = "admin"
     password = "admin"
 
@@ -89,141 +90,77 @@ def stripe_process_q(event, context):
     logger.info("logged in")
     logger.info(event)
     # logger.info(type(event))
-
+    event = event['data']['object']
+    logger.info(event)
     try:
-        appeal_dict = event.get('appeal')
-        # logger.info("1_____")
-        # logger.info(appeal_dict)
-        campaign_id = odoo.env['donation.campaign'].search([('name', 'ilike', appeal_dict.get('title'))])
-        logger.info("1.1__campaign on search___{0}".format(campaign_id))
-        if not campaign_id:
-            campaign_id = odoo.env['donation.campaign'].create({
-                'code': appeal_dict.get('id'),
-                'name': appeal_dict.get('title'),
-                'active': appeal_dict.get('active')
-            })
-            logger.info("2__campaign_on_create___{0}".format(campaign_id))
-        donor_dict = event.get('supporter')
+        fee = event.get('balance_transaction')
+        logger.info("-2____________{0}".format(fee))
+        fee="txn_3JPAs6FOdz1GkABX02vnwpnF"
+        fee = stripe.BalanceTransaction.retrieve(fee)
+        logger.info("-1____________{0}".format(fee))
+        #Use fee.get('fee') and divide it by 100. This will be the stripe fee to be 
+        #used for creating journal entry (Dr to NC-5821 PayPal, Stripe & Shopify Card Processing Fees 
+        # Cr to NC-Bank Stripe . The journal entry shud be created at the time of validating
+        # donation record. The fee shuld be stored as a value in tax receipt.
 
-        donor_id = odoo.env['res.partner'].search([('reference', '=', donor_dict.get('id'))])
-        title_id = odoo.env['res.partner.title'].search([('name', 'ilike', donor_dict.get('title'))])
-        if not title_id:
-            title_id = odoo.env['res.partner.title'].create({
-                'name': donor_dict.get('title'),
-            })
-        country_id = odoo.env['res.country'].search([('name', 'ilike', donor_dict.get('country'))])
-        if not country_id:
-            country_id = odoo.env['res.country'].create({
-                'name': donor_dict.get('country'),
-            })
-        state_id = odoo.env['res.country.state'].search([('name', 'ilike', donor_dict.get('county'))])
-        if not state_id:
-            state_id = odoo.env['res.country.state'].create({
-                'name': donor_dict.get('county'),
-                'country_id': country_id[0]
-            })
+        journal_id = odoo.env['account.journal'].search([('name', '=', 'Stripe')])[0]
+        logger.info("0_____{0}".format(event.get('object')))
 
-        if not donor_id:
-            logger.info("3_____")
-            logger.info("inside if")
-            donor_id = odoo.env['res.partner'].create({
-                'reference': donor_dict.get('id'),
-                'title': title_id[0],
-                'name': donor_dict.get('firstname') + " " + donor_dict.get('surname'),
-                'street': donor_dict.get('address1'),
-                'street2': donor_dict.get('address2'),
-                'city': donor_dict.get('town'),
-                'state_id': state_id[0],
-                'zip': donor_dict.get('postcode'),
-                'country_id': country_id[0],
-                'phone': donor_dict.get('telephone'),
-                'fax': donor_dict.get('fax'),
-                'mobile': donor_dict.get('mobile'),
-                'email': donor_dict.get('email'),
-                'mailinglist': json.loads(donor_dict.get('mailinglist').lower()),
-                'active': json.loads(donor_dict.get('active').lower()),
+        billing_detail_dic = event.get('billing_details')
+        logger.info("1___{0}".format(billing_detail_dic))
+        donor_id = odoo.env['res.partner'].search([('name', 'ilike', billing_detail_dic.get('name'))])
+        logger.info("2___{0}".format(donor_id))
+        currency_id = odoo.env['res.currency'].search([('name', 'ilike', event.get('currency'))])
+        logger.info("3___{0}".format(currency_id))
+        dt_obj = datetime.fromtimestamp(event.get('created')).strftime('%Y-%m-%d')
+        logger.info("4___{0}".format(dt_obj))
+        donation_id = odoo.env['donation.donation'].search([('partner_id', '=', donor_id),
+                                                            ('amount_total', '=', event.get('amount')/100),
+                                                            ('currency_id', '=', currency_id),
+                                                            ('donation_date', '=', dt_obj),
+                                                            ('state', '=', 'draft')], limit=1)
+        logger.info("5___{0}".format(donation_id))                                                                
+        donation_tax_receipt_id = odoo.env['donation.tax.receipt'].search([('reference', '=', event.get('id'))])
+        partner_id = []
+        partner_id = odoo.env['res.partner'].search([('name', 'ilike', billing_detail_dic.get('name'))])
+        if not partner_id:
+            partner_id.append(odoo.env['res.partner'].create({
+                'name': billing_detail_dic.get('name'),
+            }))
+        company_id = odoo.env['res.company'].search([('name', 'ilike', 'Isha Foundation')])
+        donation_tax_vals = {
+                                'reference': event.get('id'),
+                                'object_name': "{0} with fee of ({1})".format(event.get('object'),fee.get('fee')/100),
+                                'payment_method': event.get('payment_method'),
+                                'receipt_url': event.get('receipt_url'), }
+        if donation_id:
+            odoo.env['donation.donation'].write(donation_id[0],{
+                'journal_id': journal_id or False,
             })
+            odoo.execute('donation.donation', 'validate', [donation_id[0]])
+            tax_receipt_id = odoo.execute('donation.donation', 'read', [donation_id[0]], ['tax_receipt_id'])
+            donation_tax_receipt_id = tax_receipt_id[0]['tax_receipt_id'][0]
+            odoo.env['donation.tax.receipt'].write(donation_tax_receipt_id, donation_tax_vals)
         else:
-            logger.info("4_____")
-            logger.info("inside else")
-            odoo.env['res.partner'].write(donor_id,{
-                'title': title_id[0],
-                'name': donor_dict.get('firstname') + " " + donor_dict.get('surname'),
-                'street': donor_dict.get('address1'),
-                'street2': donor_dict.get('address2'),
-                'city': donor_dict.get('town'),
-                'state_id': state_id[0],
-                'zip': donor_dict.get('postcode'),
-                'country_id': country_id[0],
-                'phone': donor_dict.get('telephone'),
-                'fax': donor_dict.get('fax'),
-                'mobile': donor_dict.get('mobile'),
-                'email': donor_dict.get('email'),
-                # 'mailinglist': json.loads(donor_dict.get('mailinglist').lower()),
-                # 'active': json.loads(donor_dict.get('active').lower()),
-            })
-        logger.info("5_1__donor___{0}".format(donor_id))
-        donation_dict = event.get('donation')
-        # logger.info(donation_dict)
-        donation_id = None
-        # donation_id = odoo.env['donation.donation'].search([('donation_ref','=',donation_dict.get('id'))])
-        logger.info("5.1____{0}".format(donation_id))
-        currency_id = odoo.env['res.currency'].search([('name', '=', donation_dict.get('currency'))])
-        logger.info("5.2____{0}".format(currency_id))
-        journal_id = odoo.env['account.journal'].search([('name','ilike','Bank')])
-        logger.info("5.3____{0}".format(journal_id))
-        company_id = odoo.env['res.company'].search([('name','ilike','Isha Foundation')])
-        logger.info("5.4____{0}".format(company_id))
-        product_id = odoo.env['product.product'].search([('default_code', '=', 'DON')])
-        logger.info("5.5____{0}".format(product_id))
-        donation_datetime = parser.parse(donation_dict.get('datetime'))
-        logger.info("5.6____{0}".format(donation_datetime))
-        logger.info("5.7____{0}".format(donation_datetime.astimezone(pytz.utc).strftime('%Y-%m-%d')))
-        logger.info("6_____{0}".format(donation_dict))
-        # logger.info("before donation vals - {0}, {1}".format(json.loads(donation_dict.get('giftaid')),json.loads(donation_dict.get('recurrence'))))
+            donation_tax_vals = {'number': event.get('metadata').get('order_id'),
+                                    'date': dt_obj,
+                                    'partner_id': partner_id[0],
+                                    'type': 'each',
+                                    'donation_date': dt_obj,
+                                    'print_date': dt_obj,
+                                    'amount': event.get('amount')/100,
+                                    'company_id': company_id[0],
+                                    'reference': event.get('id'),
+                                    'object_name': "{0} with fee of ({1})".format(event.get('object'),fee.get('fee')/100),
+                                    'payment_method': event.get('payment_method'),
+                                    'receipt_url': event.get('receipt_url'), }
+            # if not donation_tax_receipt_id:
+            donation_tax_receipt_id = odoo.env['donation.tax.receipt'].create(donation_tax_vals)
+            # else:
+                # odoo.env['donation.tax.receipt'].write(donation_tax_receipt_id, donation_tax_vals)
 
-        donation_vals = {
-            'journal_id': journal_id[0],
-            'partner_id': donor_id[0],
-            'company_id': company_id[0],
-            'campaign_id': campaign_id[0],
-            'donation_ref': donation_dict.get('id'),
-            # 'check_total': donation_dict.get('amount'),
-            'currency_id': currency_id[0],
-            'exchange_rate': donation_dict.get('exchangerate'),
-            'donation_date': donation_datetime.astimezone(pytz.utc).strftime('%Y-%m-%d'),
-            'giftaid': json.loads(donation_dict.get('giftaid').lower()),
-            'display_name': donation_dict.get('displayname'),
-            'message': donation_dict.get('message'),
-            'repeat': donation_dict.get('repeat'),
-            # 'recurrence': json.loads(donation_dict.get('recurrence').lower()),
-            'recurrence_number': donation_dict.get('recurrence_number'),
-            'custom': donation_dict.get('custom'),
-        }
-        logger.info("7_____{0}".format(donation_vals))
-        
-        if json.loads(donation_dict.get('cancelled').lower()):
-            donation_vals.update({'state': 'cancel'})
-            logger.info("8____inside cancel")
-        if not donation_id:
-            logger.info("9_____no existing donation record")
-            donation_vals.update({
-                'line_ids': [(0, 0, {
-                    'product_id': product_id[0],
-                    'currency_id': currency_id[0],
-                    'quantity': 1,
-                    'unit_price': donation_dict.get('amount'),
-                })]
-            })
-            logger.info("10_____updated donation with product - {0}".format(donation_vals))
-            donation_id = odoo.env['donation.donation'].create(donation_vals)
-            logger.info("11_____donation created - {0}".format(donation_id))
-        else:
-            odoo.env['donation.donation'].write(donation_id, donation_vals)
-            logger.info("11_____donation updated - {0}".format(donation_id))
-
-        logger.info("Donation id created is {0}".format(donation_id))
-        response = {"statusCode": 200, "id": donation_id}
+        logger.info("tax invoice created is {0}".format(donation_tax_receipt_id))
+        response = {"statusCode": 200, "id": id}
     except Exception as e:
         response = {"statusCode": 501, "error": str(e)}
     logger.info("response is {0}".format(response))

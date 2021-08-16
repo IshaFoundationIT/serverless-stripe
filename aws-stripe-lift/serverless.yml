@@ -38,6 +38,7 @@ constructs:
     alarm: kirthi.siva@ishafoundation.org
     worker:
       handler: handler.consumer_stripe
+      timeout: 60
       environment:
         QUEUE_URL: ${construct:stripe-queue.queueUrl}
         EVENT_BRIDGE: ${construct:stripe.busName}
