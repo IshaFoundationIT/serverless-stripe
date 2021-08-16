@@ -41,6 +41,24 @@ provider:
         - "sqs:SendMessage"
       Resource: "*"    
 
+resources:
+  Resources:
+    stripebridgerule:
+      Type: AWS::Events::Rule
+      Properties:
+        Description: Stripe Events Rule
+        Name: StripeQueueRule
+        EventBusName: ${self:custom.sulaba-region}-${self:provider.stage}-bus
+        EventPattern:
+          source:
+            - stripe
+          detail-type:
+            - invoice.paid
+        State: ENABLED
+        Targets:
+          - Arn: ${construct:stripe-queue.queueArn}
+            Id: rule1234
+
 package:
   include:
     - config/**
@@ -51,6 +69,7 @@ package:
 functions:
   totalgiving:
     handler: handler.totalgiving_router
+    timeout: 60
     events:
       - http:
           path: /totalgiving
@@ -61,15 +80,38 @@ functions:
       EVENT_BRIDGE: ${cf:sulaba-api-deps-${self:provider.stage}.EventBusArn}
       ENDPOINT_SECRET: ${cf:sulaba-api-deps-${self:provider.stage}.SulabaServerSecretArn}
       QUEUE_URL: ${construct:my-queue.queueUrl}
+  stripe:
+    handler: handler.stripe_router
+    timeout: 60
+    events:
+      - http:
+          path: /stripe
+          method: post
+          async: false
+    environment:
+      EVENT_BRIDGE: ${cf:sulaba-api-deps-${self:provider.stage}.EventBusArn}
+      ENDPOINT_SECRET: ${cf:sulaba-api-deps-${self:provider.stage}.SulabaServerSecretArn}
+      QUEUE_URL: ${construct:my-queue.queueUrl}
+
 
 constructs:
   my-queue:
     type: queue
     alarm: kirthi.siva@ishafoundation.org
     worker:
-      handler: handler.consumer
+      handler: handler.consumer_totalgiving
+      timeout: 60
       environment:
-        QUEUE_URL: ${construct:my-queue.queueUrl}
+        TOTALGIVING_QUEUE_URL: ${construct:my-queue.queueUrl}
+        EVENT_BRIDGE: 'testing...'
+  stripe-queue:
+    type: queue
+    alarm: kirthi.siva@ishafoundation.org
+    worker:
+      handler: handler.consumer_stripe
+      timeout: 60
+      environment:
+        STRIPE_QUEUE_URL: ${construct:stripe-queue.queueUrl}
         EVENT_BRIDGE: 'testing...'
 
         # producer:

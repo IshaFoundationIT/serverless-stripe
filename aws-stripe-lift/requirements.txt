@@ -1,0 +1,4 @@
+stripe
+odoorpc
+boto3
+pytz

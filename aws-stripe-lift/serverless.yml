@@ -1,0 +1,97 @@
+#Strange behavior is that the event rules have to be edited manually for it to be effective.
+org: kirthiss
+app: py-eventbridge
+service: lift-stripe
+provider:
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: us-east-2
+  lambdaHashingVersion: '20201221'
+  endpointType: EDGE
+  logs:                # Enable CloudWatch logs
+    restApi: true
+  tracing:             # Enable X-Ray tracing
+    apiGateway: true
+  eventBridge:
+    useCloudFormation: true
+
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "events:PutEvents"
+      Resource: "*"
+    - Effect: "Allow"
+      Action:
+        - "sqs:SendMessage"
+      Resource: "*"    
+
+
+constructs:
+  stripe:
+    type: webhook
+    insecure: true
+    path: /stripe
+    eventType: $request.body.type
+  stripe-queue:
+    type: queue
+    alarm: kirthi.siva@ishafoundation.org
+    worker:
+      handler: handler.consumer_stripe
+      environment:
+        QUEUE_URL: ${construct:stripe-queue.queueUrl}
+        EVENT_BRIDGE: ${construct:stripe.busName}
+
+resources:
+  Resources:
+    stripebridgerule:
+      Type: AWS::Events::Rule
+      Properties:
+        Description: Stripe Events Rule
+        Name: StripeQueueRule
+        EventBusName: ${construct:stripe.busName}
+        EventPattern:
+          source:
+            - stripe
+          detail-type:
+            - charge.succeeded
+        State: ENABLED
+        Targets:
+          - Arn: ${construct:stripe-queue.queueArn}
+            Id: rule1234
+            # RetryPolicy:
+            #   MaximumRetryAttempts: 4
+            #   MaximumEventAgeInSeconds: 400
+            # DeadLetterConfig:
+            #   Arn: 'arn:aws:sqs:us-west-2:081035103721:demoDLQ'
+    # EventBridgeToToSqsPolicy:
+    #   Type: AWS::SQS::QueuePolicy
+    #   Properties:
+    #     PolicyDocument:
+    #       Statement:
+    #       - Effect: Allow
+    #         Principal:
+    #           Service: events.amazonaws.com
+    #         Action: SQS:SendMessage
+    #         Resource:  ${construct:stripe-queue.queueArn}
+    #     Queues:
+    #       - Ref: '*'
+# functions:
+#     myConsumer:
+#         handler: handler.stripe_router
+#         environment:
+#             ENDPOINT_SECRET: ${cf:sulaba-api-deps-${self:provider.stage}.SulabaServerSecretArn}
+#             EVENT_BRIDGE: ${construct:stripe.busName}
+        # events:
+        #     -   eventBridge:
+        #             eventBus: ${construct:stripe.busName}
+        #             pattern:
+        #                 source:
+        #                       - '*'
+                    #         # filter all events received on stripe webhook
+                    #         - stripe
+                        # detail-type:
+                        #     - charge.succeeded
+plugins:
+  - serverless-lift
+  - serverless-python-requirements
