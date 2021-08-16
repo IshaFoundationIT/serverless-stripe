@@ -75,7 +75,7 @@ def consumer_stripe(event, context):
 
 def stripe_process_q(event, context):
     # logger.info(event)
-    stripe.api_key = "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"
+    stripe.api_key = ""
     username = "admin"
     password = "admin"
 
