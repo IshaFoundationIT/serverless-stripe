@@ -1,0 +1,120 @@
+service: sulaba-webhooks
+
+package:
+  exclude:
+    - node_modules/**
+    - .venv/**
+
+provider:
+  name: aws
+  stage: ${opt:stage, "dev"}
+  region: us-east-1
+  runtime: python3.9
+  environment:
+    SERVICE_NAME: ${self:service}
+  tracing:
+    lambda: true
+    apiGateway: true
+
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - "events:PutEvents"
+          Resource:
+            Fn::Join:
+              - ""
+              -
+                #- "${cf:sulaba-webhooks-${self:provider.stage}.EventBus}"
+                - Fn::GetAtt: [ EventBus, Arn ]
+custom:
+  sulaba-region: uk-sulaba
+  events-source: ${service}.payments
+  #pythonRequirements:
+    #pythonBin: python3
+    #dockerizePip: true
+
+resources:
+  Resources:
+    EventBus:
+      Type: AWS::Events::EventBus
+      Properties:
+        Name: ${self:custom.sulaba-region}-${self:provider.stage}-bus
+
+    Queue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: ${self:custom.sulaba-region}-${self:provider.stage}-queue
+
+
+    PublishToQueueRule:
+      Type: AWS::Events::Rule
+      Properties:
+        Description: Publish Event Bus events into SQS
+        Name: SulabaPaymentsWebhooksRule
+        EventBusName: !GetAtt EventBus.Name #${cf:sulaba-webhooks-${self:provider.stage}.EventBus}
+        EventPattern:
+          source:
+            # TODO: Move this to a variable
+            - sulaba.donations.webhooks.paypal
+          detail-type:
+            - payment.capture.completed
+        State: ENABLED
+        Targets:
+          - Arn:
+              Fn::GetAtt:
+                - "Queue"
+                - "Arn"
+            Id: payments-webhooks-to-sqs-rule
+
+    SQSPolicy:
+      Type: AWS::SQS::QueuePolicy
+      Properties:
+        Queues:
+          - !Ref Queue
+        PolicyDocument:
+          Statement:
+            - Action:
+                - "SQS:SendMessage"
+              Effect: "Allow"
+              Resource: !GetAtt Queue.Arn
+              Principal:
+                Service:
+                  - "events.amazonaws.com"
+  Outputs:
+    EventBus:
+      Value:
+        Ref: EventBus
+    Queue:
+      Value:
+        Ref: Queue
+
+functions:
+  paypal:
+    handler: handlers/paypal.payment_captured
+    description: Webhook to handle PAYMENT.CAPTURE.COMPLETED event
+    events:
+      - http:
+          path: /paypal
+          method: post
+    environment:
+      EVENTS_SOURCE: sulaba.donations.webhooks.paypal
+      EVENT_BUS: !Ref EventBus
+      QUEUE: !GetAtt Queue.Arn
+
+  stripe:
+    handler: handlers/stripe.payment_captured
+    description: Webhook to handle PAYMENT.CAPTURE.COMPLETED event
+    events:
+      - http:
+          path: /stripe
+          method: post
+    environment:
+      EVENTS_SOURCE: sulaba.donations.webhooks.stripe
+      EVENT_BUS: !Ref EventBus
+      QUEUE: !GetAtt Queue.Arn
+      STRIPE_ENDPOINT_SECRET: "whsec_g19eI1ACjHTROyJxK4e4n2t6VlZAVA6H"
+
+plugins:
+  - serverless-python-requirements

@@ -1,0 +1,1447 @@
+{
+    "transaction_details": [
+        {
+            "transaction_info": {
+                "paypal_account_id": "7JKBR3LASJLPU",
+                "transaction_id": "5LK070830J617760X",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T10:49:45+0000",
+                "transaction_updated_date": "2021-08-21T10:49:45+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "352.80"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-5.14"
+                },
+                "sales_tax_amount": {
+                    "currency_code": "GBP",
+                    "value": "58.80"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Bamboo Toothbrush - Adult - gbTurmeric Powder - gbDhyanalinga Yantra - gb",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38432.27"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38432.27"
+                },
+                "invoice_id": "c21886306877522.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "F37JMNTUF7A8N",
+                "transaction_id": "66B70149YL3409928",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T11:51:03+0000",
+                "transaction_updated_date": "2021-08-21T11:51:03+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "93.63"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-1.98"
+                },
+                "sales_tax_amount": {
+                    "currency_code": "GBP",
+                    "value": "14.73"
+                },
+                "shipping_amount": {
+                    "currency_code": "GBP",
+                    "value": "5.25"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Rudraksha Panchamukhi Mala Bead size-5mm - eu",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38523.92"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38523.92"
+                },
+                "invoice_id": "c21886678827090.3",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "Z7J679RWXKW5J",
+                "transaction_id": "5G9110874N162745J",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T12:33:57+0000",
+                "transaction_updated_date": "2021-08-21T12:33:57+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "12.65"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-0.38"
+                },
+                "sales_tax_amount": {
+                    "currency_code": "GBP",
+                    "value": "1.40"
+                },
+                "shipping_amount": {
+                    "currency_code": "GBP",
+                    "value": "4.25"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Turmeric Powder - gb",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38536.19"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38536.19"
+                },
+                "invoice_id": "c21887030132818.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "TPTTTFLZCEGEC",
+                "transaction_id": "4BV70744HJ783311W",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T12:36:37+0000",
+                "transaction_updated_date": "2021-08-21T12:36:37+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "40.80"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-0.77"
+                },
+                "sales_tax_amount": {
+                    "currency_code": "GBP",
+                    "value": "6.80"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Consecrated Copper Snake Ring - Small / gbConsecrated Copper Snake Ring - Medium / gbSukku Banam - gbNeem Powder - gb",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38576.22"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38576.22"
+                },
+                "invoice_id": "c21887112347730.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "HKJS57SU5YVQE",
+                "transaction_id": "4SV56576T83958117",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T12:57:01+0000",
+                "transaction_updated_date": "2021-08-21T12:57:01+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "45.25"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-0.83"
+                },
+                "shipping_amount": {
+                    "currency_code": "GBP",
+                    "value": "5.25"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Inner Engineering: A Yogi's Guide to Joy - gbKarma - A Yogi's Guide to Crafting Your Destiny - gb",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38620.64"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38620.64"
+                },
+                "invoice_id": "c21887227560018.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "3YZGNNWHKH4TS",
+                "transaction_id": "6G083343XW863394M",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T13:38:35+0000",
+                "transaction_updated_date": "2021-08-21T13:38:35+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "19.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-0.62"
+                },
+                "shipping_amount": {
+                    "currency_code": "EUR",
+                    "value": "13.00"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Consecrated Copper Snake Ring - Small / eu",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "87971.74"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "87971.74"
+                },
+                "invoice_id": "c21887582044242.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "TXAPYBJJ6LMDJ",
+                "transaction_id": "2PC216286V909761A",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T14:08:21+0000",
+                "transaction_updated_date": "2021-08-21T14:08:21+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "88084.78"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "88084.78"
+                },
+                "invoice_id": "PCH-C37-G0-U54121",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "PFMWZKYG8TB5U",
+                "transaction_id": "3ED523208E984180G",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T14:27:01+0000",
+                "transaction_updated_date": "2021-08-21T14:27:01+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "86.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.55"
+                },
+                "shipping_amount": {
+                    "currency_code": "EUR",
+                    "value": "29.00"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Backrest Meditation Chair - euHammered Copper Water Bottle - eu",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "88169.23"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "88169.23"
+                },
+                "invoice_id": "c21887959334994.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "P34VQ3ENSL2CW",
+                "transaction_id": "7R015210L6396302X",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T15:10:51+0000",
+                "transaction_updated_date": "2021-08-21T15:10:51+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "16.25"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-0.43"
+                },
+                "sales_tax_amount": {
+                    "currency_code": "GBP",
+                    "value": "2.00"
+                },
+                "shipping_amount": {
+                    "currency_code": "GBP",
+                    "value": "4.25"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Consecrated Copper Snake Ring - Medium / gb",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38636.46"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38636.46"
+                },
+                "invoice_id": "c21888329449554.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "P8RP9RDSTD4SS",
+                "transaction_id": "68614588WP621282N",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T16:06:56+0000",
+                "transaction_updated_date": "2021-08-21T16:06:56+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "37.65"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-0.73"
+                },
+                "sales_tax_amount": {
+                    "currency_code": "GBP",
+                    "value": "5.40"
+                },
+                "shipping_amount": {
+                    "currency_code": "GBP",
+                    "value": "5.25"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Hammered Copper Water Bottle - gb",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38673.38"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38673.38"
+                },
+                "invoice_id": "c21888764706898.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "XCANRNEQLTLZJ",
+                "transaction_id": "98M745707A112801X",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T17:55:42+0000",
+                "transaction_updated_date": "2021-08-21T17:55:42+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "88282.27"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "88282.27"
+                },
+                "invoice_id": "PCH-C37-G0-U54128",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "6BHMPZMAU4NMS",
+                "transaction_id": "6PA20686FU149004P",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T18:25:47+0000",
+                "transaction_updated_date": "2021-08-21T18:25:47+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "88395.31"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "88395.31"
+                },
+                "invoice_id": "PCH-C37-G0-U54130",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "KEHAJNN4MSJ78",
+                "transaction_id": "7BY69442U7009525J",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T18:37:06+0000",
+                "transaction_updated_date": "2021-08-21T18:37:06+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "95.00"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-1.53"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38766.85"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38766.85"
+                },
+                "invoice_id": "PCH-C38-G0-U54131",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "MQUU5CAXJSTYG",
+                "transaction_id": "05J463800U7570624",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T19:09:39+0000",
+                "transaction_updated_date": "2021-08-21T19:09:39+0000",
+                "transaction_amount": {
+                    "currency_code": "SEK",
+                    "value": "484.00"
+                },
+                "fee_amount": {
+                    "currency_code": "SEK",
+                    "value": "-10.03"
+                },
+                "shipping_amount": {
+                    "currency_code": "SEK",
+                    "value": "159.00"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Hammered Copper Water Bottle - eu",
+                "ending_balance": {
+                    "currency_code": "SEK",
+                    "value": "473.97"
+                },
+                "available_balance": {
+                    "currency_code": "SEK",
+                    "value": "473.97"
+                },
+                "invoice_id": "c21890239791186.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "transaction_id": "7F62004831065191Y",
+                "paypal_reference_id": "05J463800U7570624",
+                "paypal_reference_id_type": "TXN",
+                "transaction_event_code": "T0200",
+                "transaction_initiation_date": "2021-08-21T19:09:39+0000",
+                "transaction_updated_date": "2021-08-21T19:09:39+0000",
+                "transaction_amount": {
+                    "currency_code": "SEK",
+                    "value": "-473.97"
+                },
+                "transaction_status": "S",
+                "ending_balance": {
+                    "currency_code": "SEK",
+                    "value": "0.00"
+                },
+                "available_balance": {
+                    "currency_code": "SEK",
+                    "value": "0.00"
+                },
+                "invoice_id": "c21890239791186.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "02"
+            }
+        },
+        {
+            "transaction_info": {
+                "transaction_id": "0FT50414YM2228903",
+                "paypal_reference_id": "05J463800U7570624",
+                "paypal_reference_id_type": "TXN",
+                "transaction_event_code": "T0200",
+                "transaction_initiation_date": "2021-08-21T19:09:39+0000",
+                "transaction_updated_date": "2021-08-21T19:09:39+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "38.05"
+                },
+                "transaction_status": "S",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38804.90"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38804.90"
+                },
+                "invoice_id": "c21890239791186.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "02"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "7Y6D7FSAQGULS",
+                "transaction_id": "83J531943U911263G",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T19:37:15+0000",
+                "transaction_updated_date": "2021-08-21T19:37:15+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "88508.35"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "88508.35"
+                },
+                "invoice_id": "PCH-C37-G0-U54135",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "NAJ5DQM4G2342",
+                "transaction_id": "45S29863EA995601D",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T19:37:24+0000",
+                "transaction_updated_date": "2021-08-21T19:37:24+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "47.25"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-0.86"
+                },
+                "sales_tax_amount": {
+                    "currency_code": "GBP",
+                    "value": "7.00"
+                },
+                "shipping_amount": {
+                    "currency_code": "GBP",
+                    "value": "5.25"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Rudraksha Panchamukhi Mala Bead size-7mm - gb",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38851.29"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38851.29"
+                },
+                "invoice_id": "c21888199589970.2",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "CAXVNQLVQCKMG",
+                "transaction_id": "4ND57613YD0811107",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-21T21:54:01+0000",
+                "transaction_updated_date": "2021-08-21T21:54:01+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "88621.39"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "88621.39"
+                },
+                "invoice_id": "PCH-C37-G0-U54138",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "7LDM7952SHC4L",
+                "transaction_id": "12S293525T087972X",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T00:18:59+0000",
+                "transaction_updated_date": "2021-08-22T00:18:59+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "14.45"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-0.40"
+                },
+                "sales_tax_amount": {
+                    "currency_code": "GBP",
+                    "value": "1.70"
+                },
+                "shipping_amount": {
+                    "currency_code": "GBP",
+                    "value": "4.25"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Isha Vibhuti - gbConsecrated Copper Snake Ring - Medium / gb",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38865.34"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38865.34"
+                },
+                "invoice_id": "c21892732551250.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "HG2DV7N4AKCCG",
+                "transaction_id": "5DE842523X066991M",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T02:17:50+0000",
+                "transaction_updated_date": "2021-08-22T02:17:50+0000",
+                "transaction_amount": {
+                    "currency_code": "CHF",
+                    "value": "30.00"
+                },
+                "fee_amount": {
+                    "currency_code": "CHF",
+                    "value": "-1.12"
+                },
+                "shipping_amount": {
+                    "currency_code": "CHF",
+                    "value": "14.00"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Bamboo Toothbrush - Adult - euLinga Bhairavi Yantra Sutra - eu",
+                "ending_balance": {
+                    "currency_code": "CHF",
+                    "value": "28.88"
+                },
+                "available_balance": {
+                    "currency_code": "CHF",
+                    "value": "28.88"
+                },
+                "invoice_id": "c21891551101010.5",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "transaction_id": "8GY17251JM652804E",
+                "paypal_reference_id": "5DE842523X066991M",
+                "paypal_reference_id_type": "TXN",
+                "transaction_event_code": "T0200",
+                "transaction_initiation_date": "2021-08-22T02:17:50+0000",
+                "transaction_updated_date": "2021-08-22T02:17:50+0000",
+                "transaction_amount": {
+                    "currency_code": "CHF",
+                    "value": "-28.88"
+                },
+                "transaction_status": "S",
+                "ending_balance": {
+                    "currency_code": "CHF",
+                    "value": "0.00"
+                },
+                "available_balance": {
+                    "currency_code": "CHF",
+                    "value": "0.00"
+                },
+                "invoice_id": "c21891551101010.5",
+                "custom_field": "Shopify",
+                "protection_eligibility": "02"
+            }
+        },
+        {
+            "transaction_info": {
+                "transaction_id": "9CS57667HH4269521",
+                "paypal_reference_id": "5DE842523X066991M",
+                "paypal_reference_id_type": "TXN",
+                "transaction_event_code": "T0200",
+                "transaction_initiation_date": "2021-08-22T02:17:50+0000",
+                "transaction_updated_date": "2021-08-22T02:17:50+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "22.33"
+                },
+                "transaction_status": "S",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38887.67"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38887.67"
+                },
+                "invoice_id": "c21891551101010.5",
+                "custom_field": "Shopify",
+                "protection_eligibility": "02"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "JABZF4UD57CYG",
+                "transaction_id": "7068625792872915F",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T07:59:46+0000",
+                "transaction_updated_date": "2021-08-22T07:59:46+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "88734.43"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "88734.43"
+                },
+                "invoice_id": "PCH-C37-G0-U54156",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "7SLXVY4PMEWYN",
+                "transaction_id": "4HA1740085584610L",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T08:12:10+0000",
+                "transaction_updated_date": "2021-08-22T08:12:10+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "50.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.05"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "88783.38"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "88783.38"
+                },
+                "invoice_id": "PCH-C37-G0-U54157",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "HNP2E5HPZ7FR8",
+                "transaction_id": "9YC02445N76310345",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T09:32:32+0000",
+                "transaction_updated_date": "2021-08-22T09:32:32+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "92.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.64"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "88873.74"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "88873.74"
+                },
+                "invoice_id": "PCH-C37-G0-U54165",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "L6YF2KHYWAT6C",
+                "transaction_id": "97H68854364333804",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T09:59:24+0000",
+                "transaction_updated_date": "2021-08-22T09:59:24+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-3.46"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "88985.28"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "88985.28"
+                },
+                "invoice_id": "PCH-C37-G0-U54169",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "9YZ73Z9E5LTW8",
+                "transaction_id": "54250949HD952491K",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T10:19:39+0000",
+                "transaction_updated_date": "2021-08-22T10:19:39+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "57.50"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.16"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "89041.62"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "89041.62"
+                },
+                "invoice_id": "PCH-C37-G0-U54170",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "P792RGNDNBERE",
+                "transaction_id": "7R7262927Y4611012",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T12:43:41+0000",
+                "transaction_updated_date": "2021-08-22T12:43:41+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "89154.66"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "89154.66"
+                },
+                "invoice_id": "PCH-C37-G0-U54177",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "VXUYX8RMLJWJC",
+                "transaction_id": "3GP89019JM8000145",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T13:14:18+0000",
+                "transaction_updated_date": "2021-08-22T13:14:18+0000",
+                "transaction_amount": {
+                    "currency_code": "CHF",
+                    "value": "96.00"
+                },
+                "fee_amount": {
+                    "currency_code": "CHF",
+                    "value": "-3.14"
+                },
+                "shipping_amount": {
+                    "currency_code": "CHF",
+                    "value": "20.00"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Brass Buddha Lamp - Small - eu",
+                "ending_balance": {
+                    "currency_code": "CHF",
+                    "value": "92.86"
+                },
+                "available_balance": {
+                    "currency_code": "CHF",
+                    "value": "92.86"
+                },
+                "invoice_id": "c21898231218258.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "transaction_id": "39J96822HR239960E",
+                "paypal_reference_id": "3GP89019JM8000145",
+                "paypal_reference_id_type": "TXN",
+                "transaction_event_code": "T0200",
+                "transaction_initiation_date": "2021-08-22T13:14:18+0000",
+                "transaction_updated_date": "2021-08-22T13:14:18+0000",
+                "transaction_amount": {
+                    "currency_code": "CHF",
+                    "value": "-92.86"
+                },
+                "transaction_status": "S",
+                "ending_balance": {
+                    "currency_code": "CHF",
+                    "value": "0.00"
+                },
+                "available_balance": {
+                    "currency_code": "CHF",
+                    "value": "0.00"
+                },
+                "invoice_id": "c21898231218258.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "02"
+            }
+        },
+        {
+            "transaction_info": {
+                "transaction_id": "2M155304Y06674326",
+                "paypal_reference_id": "3GP89019JM8000145",
+                "paypal_reference_id_type": "TXN",
+                "transaction_event_code": "T0200",
+                "transaction_initiation_date": "2021-08-22T13:14:18+0000",
+                "transaction_updated_date": "2021-08-22T13:14:18+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "71.81"
+                },
+                "transaction_status": "S",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38959.48"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38959.48"
+                },
+                "invoice_id": "c21898231218258.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "02"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "W5XG3YABXWMNL",
+                "transaction_id": "75U21622G6377525N",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T13:41:01+0000",
+                "transaction_updated_date": "2021-08-22T13:41:01+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "89267.70"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "89267.70"
+                },
+                "invoice_id": "PCH-C37-G0-U54188",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "B3PGJ6L47U2PJ",
+                "transaction_id": "7C329386XA499541T",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T14:32:11+0000",
+                "transaction_updated_date": "2021-08-22T14:32:11+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "89380.74"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "89380.74"
+                },
+                "invoice_id": "PCH-C37-G0-U54196",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "NYZWSJHDQ432S",
+                "transaction_id": "97G12817RS354000H",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T15:22:25+0000",
+                "transaction_updated_date": "2021-08-22T15:22:25+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "89493.78"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "89493.78"
+                },
+                "invoice_id": "PCH-C37-G0-U54242",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "5TASJM6ZRSK6E",
+                "transaction_id": "7AH68115ED814223K",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T15:38:35+0000",
+                "transaction_updated_date": "2021-08-22T15:38:35+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "542.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-7.94"
+                },
+                "shipping_amount": {
+                    "currency_code": "EUR",
+                    "value": "21.00"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Brass Buddha Lamp - Small - euCopper Tea Light Holder - euLinga Bhairavi Gudi - euNandi Statue (Metal) - eu",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "90027.84"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "90027.84"
+                },
+                "invoice_id": "c21877231059026.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "QRRDBRH48KAJC",
+                "transaction_id": "6MA92483AX401214M",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T15:40:04+0000",
+                "transaction_updated_date": "2021-08-22T15:40:04+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "90140.88"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "90140.88"
+                },
+                "invoice_id": "PCH-C37-G0-U54252",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "BVKA5JZM5WY9Q",
+                "transaction_id": "03994207L22736846",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T16:19:56+0000",
+                "transaction_updated_date": "2021-08-22T16:19:56+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "65.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.26"
+                },
+                "shipping_amount": {
+                    "currency_code": "EUR",
+                    "value": "13.00"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Consecrated Copper Snake Ring - Small / euJala Neti Pot - euBamboo Toothbrush - Adult - eu",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "90204.62"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "90204.62"
+                },
+                "invoice_id": "c21899808833618.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "A2N69QL4TLHLW",
+                "transaction_id": "4SL00228MJ303615G",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T18:49:04+0000",
+                "transaction_updated_date": "2021-08-22T18:49:04+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "90317.66"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "90317.66"
+                },
+                "invoice_id": "PCH-C37-G0-U54269",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "DWPY4RFUJRTB8",
+                "transaction_id": "2LX96033LU924923W",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T19:51:19+0000",
+                "transaction_updated_date": "2021-08-22T19:51:19+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "90430.70"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "90430.70"
+                },
+                "invoice_id": "PCH-C37-G0-U54279",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "6CM8XG2PLWD82",
+                "transaction_id": "32S843017G403521V",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T20:06:24+0000",
+                "transaction_updated_date": "2021-08-22T20:06:24+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "90543.74"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "90543.74"
+                },
+                "invoice_id": "PCH-C37-G0-U54282",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "RW94SKRASS3K6",
+                "transaction_id": "4A455476MJ7645403",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T20:07:04+0000",
+                "transaction_updated_date": "2021-08-22T20:07:04+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "90656.78"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "90656.78"
+                },
+                "invoice_id": "PCH-C37-G0-U54281",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "9WRQ5KEUSBBG2",
+                "transaction_id": "90J0367733275741P",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T20:09:26+0000",
+                "transaction_updated_date": "2021-08-22T20:09:26+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "57.50"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.16"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "90713.12"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "90713.12"
+                },
+                "invoice_id": "PCH-C37-G0-U54283",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "KQJP9S2NDWNF6",
+                "transaction_id": "3S845770JX822963C",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T22:00:51+0000",
+                "transaction_updated_date": "2021-08-22T22:00:51+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "28.25"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-0.60"
+                },
+                "sales_tax_amount": {
+                    "currency_code": "GBP",
+                    "value": "4.00"
+                },
+                "shipping_amount": {
+                    "currency_code": "GBP",
+                    "value": "4.25"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "Linga Bhairavi Camphor - gb",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "38987.13"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "38987.13"
+                },
+                "invoice_id": "c21888117178450.1",
+                "custom_field": "Shopify",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "YKG3542W7QSTL",
+                "transaction_id": "1L215418TM7254820",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-22T23:17:05+0000",
+                "transaction_updated_date": "2021-08-22T23:17:05+0000",
+                "transaction_amount": {
+                    "currency_code": "GBP",
+                    "value": "95.00"
+                },
+                "fee_amount": {
+                    "currency_code": "GBP",
+                    "value": "-1.53"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "GBP",
+                    "value": "39080.60"
+                },
+                "available_balance": {
+                    "currency_code": "GBP",
+                    "value": "39080.60"
+                },
+                "invoice_id": "PCH-C38-G0-U54292",
+                "protection_eligibility": "01"
+            }
+        },
+        {
+            "transaction_info": {
+                "paypal_account_id": "5HRJSW8ZZ2AZJ",
+                "transaction_id": "9U5539958W595635T",
+                "transaction_event_code": "T0006",
+                "transaction_initiation_date": "2021-08-23T05:40:33+0000",
+                "transaction_updated_date": "2021-08-23T05:40:33+0000",
+                "transaction_amount": {
+                    "currency_code": "EUR",
+                    "value": "115.00"
+                },
+                "fee_amount": {
+                    "currency_code": "EUR",
+                    "value": "-1.96"
+                },
+                "transaction_status": "S",
+                "transaction_subject": "IEO_COURSE",
+                "ending_balance": {
+                    "currency_code": "EUR",
+                    "value": "90826.16"
+                },
+                "available_balance": {
+                    "currency_code": "EUR",
+                    "value": "90826.16"
+                },
+                "invoice_id": "PCH-C37-G0-U54308",
+                "protection_eligibility": "01"
+            }
+        }
+    ],
+    "account_number": "TXE32H67D97W8",
+    "start_date": "2021-08-21T07:00:00+0000",
+    "end_date": "2021-08-23T06:59:59+0000",
+    "last_refreshed_datetime": "2021-08-23T08:59:59+0000",
+    "page": 1,
+    "total_items": 46,
+    "total_pages": 1,
+    "links": [
+        {
+            "href": "https://api.paypal.com/v1/reporting/transactions?end_date=2021-08-22T23%3A59%3A59-0700&start_date=2021-08-21T00%3A00%3A00-0700&page_size=100&page=1",
+            "rel": "self",
+            "method": "GET"
+        }
+    ]
+}
