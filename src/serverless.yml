@@ -28,6 +28,12 @@ provider:
               -
                 #- "${cf:sulaba-webhooks-${self:provider.stage}.EventBus}"
                 - Fn::GetAtt: [ EventBus, Arn ]
+
+        - Effect: "Allow"
+          Action:
+            - "SQS:sendMessage"
+          Resource: !GetAtt Queue.Arn
+
 custom:
   sulaba-region: uk-sulaba
   events-source: ${service}.payments
@@ -82,6 +88,7 @@ resources:
               Principal:
                 Service:
                   - "events.amazonaws.com"
+
   Outputs:
     EventBus:
       Value:
@@ -115,6 +122,17 @@ functions:
       EVENT_BUS: !Ref EventBus
       QUEUE: !GetAtt Queue.Arn
       STRIPE_ENDPOINT_SECRET: "whsec_g19eI1ACjHTROyJxK4e4n2t6VlZAVA6H"
+
+  totalgiving:
+    handler: handlers/totalgiving.donation_succeded
+    description: Webhook to handle Donation webhook event
+    events:
+      - http:
+          path: /totalgiving
+          method: post
+    environment:
+      QUEUE: !Ref Queue
+
 
 plugins:
   - serverless-python-requirements
