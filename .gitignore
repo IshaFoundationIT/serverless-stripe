@@ -1,8 +1,7 @@
 .serverless
 *.log
 npm-debug.log
-pids
-*.pid
+pids *.pid
 *.seed
 dist
 lib-cov
@@ -25,3 +24,4 @@ tmp
 vendor
 ./bin/Debug/netcoreapp2.1/
 ./bin/release/netcoreapp2.1/
+.venv
